@@ -2,7 +2,7 @@ node{
 
     stage('SCM Checkout')
     {
-        git credentialsId: '4cc785e9-441d-4818-a248-2bfb2148004d', url: 'https://github.com/VardhanNS/phpmysql-app.git'
+        git credentialsId: '0d5bf621-8589-4473-9a21-752b05086b20', url: 'https://github.com/vinprak/https-github.com-VardhanNS-phpmysql-app.git'
     }
     
     stage('Run Docker Compose File')
@@ -12,10 +12,10 @@ node{
     }
     stage('PUSH image to Docker Hub')
     {
-        withCredentials([string(credentialsId: 'DockerHubPassword', variable: 'DHPWD')]) 
+        withCredentials([string(credentialsId: 'Vinkashi4vin', variable: 'DHPWD')]) 
         {
-            sh "docker login -u vardhanns -p ${DHPWD}"
+            sh "docker login -u vinprak -p ${DHPWD}"
         }
-        sh 'docker push vardhanns/phpmysql_app'
+        sh 'docker push vinprak/phpmysql_app'
     }
 }
